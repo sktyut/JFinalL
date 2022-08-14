@@ -23,6 +23,8 @@ public class AppConfig extends JFinalConfig {
         constants.setViewType(ViewType.FREE_MARKER);
         constants.setEncoding("UTF-8");
         constants.setFreeMarkerViewExtension("ftl");
+        constants.setBaseDownloadPath("download"); // 设置文件渲染的默认路径
+        constants.setBaseUploadPath("upload"); // 设置文件上传存放的默认路径
     }
 
     public void configRoute(Routes routes) {
@@ -31,7 +33,7 @@ public class AppConfig extends JFinalConfig {
     }
 
     public void configPlugin(Plugins plugins) {
-        DruidPlugin dp = new DruidPlugin("jdbc:mysql://localhost:3306/test?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8","root", "123456","com.mysql.cj.jdbc.Driver");
+        DruidPlugin dp = new DruidPlugin("jdbc:mysql://localhost:3306/jfinall?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8","root", "123456","com.mysql.cj.jdbc.Driver");
         plugins.add(dp);
         ActiveRecordPlugin arp = new ActiveRecordPlugin(dp);
         arp.addMapping("user", User.class);

@@ -2,9 +2,6 @@ package com.rosinante.controller;
 
 import com.jfinal.core.Controller;
 import com.rosinante.po.User;
-import org.joda.time.DateTime;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 
 import java.util.Date;
 
