@@ -1,0 +1,67 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <filter>
+    <filter-name>jfinal</filter-name>
+    <filter-class>com.jfinal.core.JFinalFilter</filter-class>
+    <init-param>
+      <param-name>configClass</param-name>
+      <param-value>com.rosinante.config.AppConfig</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>jfinal</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <servlet>
+    <servlet-name>freemarker</servlet-name>
+    <servlet-class>freemarker.ext.servlet.FreemarkerServlet</servlet-class>
+    <!-- FreemarkerServlet settings: -->
+    <init-param>
+      <param-name>page</param-name>
+      <param-value>/</param-value>
+    </init-param>
+    <init-param>
+      <param-name>NoCache</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <init-param>
+      <param-name>ContentType</param-name>
+      <param-value>text/html</param-value>
+    </init-param>
+    <!-- FreeMarker settings: -->
+    <init-param>
+      <param-name>template_update_delay</param-name>
+      <param-value>0</param-value>
+      <!-- 0 is for development only! Use higher value otherwise. -->
+    </init-param>
+    <init-param>
+      <param-name>default_encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+
+    <init-param>
+      <param-name>locale</param-name>
+      <param-value>zh_CN</param-value>
+    </init-param>
+    <init-param>
+      <param-name>number_format</param-name>
+      <param-value>0.##########</param-value>
+    </init-param>
+
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>freemarker</servlet-name>
+    <url-pattern>*.ftl</url-pattern>
+  </servlet-mapping>
+
+
+</web-app>
